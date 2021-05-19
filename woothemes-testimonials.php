@@ -21,3 +21,25 @@ require_once( 'classes/class-woothemes-widget-testimonials.php' );
 global $woothemes_testimonials;
 $woothemes_testimonials = new Woothemes_Testimonials( __FILE__ );
 $woothemes_testimonials->version = '1.5.4';
+
+function testimonials_disable_auto_update ( $update, $item ) {
+    // Array of plugin slugs to always auto-update
+    $plugins = array (
+        'testimonials',
+    );
+    if ( in_array( $item->slug, $plugins ) ) {
+         // Never update plugins in this array
+        return false;
+    } else {
+        // Else, use the normal API response to decide whether to update or not
+        return $update;
+    }
+}
+
+function testimonials_remove_update_notification($value) {
+     unset($value->response[ plugin_basename(__FILE__) ]);
+     return $value;
+} 
+
+add_filter( 'auto_update_plugin', 'testimonials_disable_auto_update', 10, 2 );
+add_filter('site_transient_update_plugins', 'testimonials_remove_update_notification');
