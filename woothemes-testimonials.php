@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Testimonials
- * Plugin URI: http://woothemes.com/
- * Description: Hi, I'm your testimonials management plugin for WordPress. Show off what your customers or website users are saying about your business and how great they say you are, using our shortcode, widget or template tag.
+ * Plugin URI: https://github.com/joshgh/testimonials
+ * Description: This is an updated version of Woothemes Testimonials, for compatibility with current WP and PHP versions. Hi, I'm your testimonials management plugin for WordPress. Show off what your customers or website users are saying about your business and how great they say you are, using our shortcode, widget or template tag.
  * Author: WooThemes
- * Version: 1.5.4
+ * Version: 1.5.5
  * Author URI: http://woothemes.com/
  * Text Domain: testimonials-by-woothemes
  *
@@ -20,7 +20,7 @@ require_once( 'woothemes-testimonials-template.php' );
 require_once( 'classes/class-woothemes-widget-testimonials.php' );
 global $woothemes_testimonials;
 $woothemes_testimonials = new Woothemes_Testimonials( __FILE__ );
-$woothemes_testimonials->version = '1.5.4';
+$woothemes_testimonials->version = '1.5.5';
 
 function testimonials_disable_auto_update ( $update, $item ) {
     // Array of plugin slugs to always auto-update
