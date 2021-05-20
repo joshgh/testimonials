@@ -84,10 +84,10 @@ class Woothemes_Widget_Testimonials extends WP_Widget {
 		do_action( $this->woothemes_widget_cssclass . '_top' );
 
 		// Integer values.
-		if ( isset( $instance['limit'] ) && ( 0 < count( $instance['limit'] ) ) ) { $args['limit'] = intval( $instance['limit'] ); }
-		if ( isset( $instance['per_row'] ) && ( 0 < count( $instance['per_row'] ) ) ) { $args['per_row'] = intval( $instance['per_row'] ); }
-		if ( isset( $instance['specific_id'] ) && ( 0 < count( $instance['specific_id'] ) ) ) { $args['id'] = intval( $instance['specific_id'] ); }
-		if ( isset( $instance['size'] ) && ( 0 < count( $instance['size'] ) ) ) { $args['size'] = intval( $instance['size'] ); }
+		if ( isset( $instance['limit'] ) && ( 0 < intval( $instance['limit'] ) ) ) { $args['limit'] = intval( $instance['limit'] ); }
+		if ( isset( $instance['per_row'] ) && ( 0 < intval( $instance['per_row'] ) ) ) { $args['per_row'] = intval( $instance['per_row'] ); }
+		if ( isset( $instance['specific_id'] ) && ( 0 < intval( $instance['specific_id'] ) ) ) { $args['id'] = intval( $instance['specific_id'] ); }
+		if ( isset( $instance['size'] ) && ( 0 < intval( $instance['size'] ) ) ) { $args['size'] = intval( $instance['size'] ); }
 		if ( isset( $instance['category'] ) && is_numeric( $instance['category'] ) ) $args['category'] = intval( $instance['category'] );
 
 		// Boolean values.
